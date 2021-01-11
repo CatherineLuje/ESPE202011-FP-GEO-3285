@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ws04logicaloperators;
 
 /**
@@ -16,27 +12,27 @@ public class WS04LogicalOperators {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int x = 10;
-        if (x != 10) {
-            System.out.println("x is equals to 10");
+        int x = 5;
+        if (x != 5) {
+            System.out.println("x is equals to 5");
         } else {
-            System.out.println("x is NOT equal to 10");
+            System.out.println("x is NOT equal to 5");
         }
 
         boolean y = x != 10;
         System.out.println("x != 10 --> " + (y));
-        System.out.println("x == 10 --> " + (x == 10));
-        System.out.println("x = 5 -->   " + (x = 5));
-        System.out.println("x > 5 -->  " + (x > 5));
-        System.out.println("x >= 5 --> " + (x >= 5));
+        System.out.println("x == 10 --> " + (x == 5));
+        System.out.println("x = 5 -->   " + (x = 8));
+        System.out.println("x > 5 -->  " + (x > 8));
+        System.out.println("x >= 5 --> " + (x >= 8));
 
         boolean comparison = false;
         boolean comparison2 = false;
         boolean comparison3 = false;
-        comparison = x != 10;
+        comparison = x != 5;
         System.out.println("comparison -> " + comparison);
 
-        comparison2 = x >= 5;
+        comparison2 = x >= 8;
         System.out.println(" logical AND (&&)");
         comparison3 = comparison && comparison2;
         System.out.println("comparison1 ^ comparison2 --> " + (comparison3));
