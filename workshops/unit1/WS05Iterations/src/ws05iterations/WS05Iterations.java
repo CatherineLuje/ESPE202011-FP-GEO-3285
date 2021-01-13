@@ -4,7 +4,7 @@ package ws05iterations;
 public class WS05Iterations {
 
     /**
-     * @param args Catherine Luje
+     * @param args 
      */
     public static void main(String[] args) {
         // TODO code application logic here
