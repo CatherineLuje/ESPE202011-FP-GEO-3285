@@ -42,6 +42,6 @@ public class WS05Iterations {
                  product = table * j;
                  System.out.println("9 * " + j + "=" + product );
                 
-        }
+        }     
     }
   }
