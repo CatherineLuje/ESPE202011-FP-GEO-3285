@@ -15,7 +15,7 @@ public class HW03Iterations {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Exercise 1
         
          int i;
         i = 0;
@@ -26,7 +26,7 @@ public class HW03Iterations {
              //i +=1
              i+=1;
         }
-         
+         // Exercise 2 
              System.out.println("Multiplation Tables : 26");
              int top =26;
              int product=0;
@@ -34,7 +34,7 @@ public class HW03Iterations {
              for(int j = 1; j<= top; j++){
                  product = table * j;
                  System.out.println("26 * " + j + "=" + product );
-             
+        // Exercise 3
         }
              System.out.println(" Multiplies of 12  ");
              for(int k = 0; k <= 180 ; k+=12){
