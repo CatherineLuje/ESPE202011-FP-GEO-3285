@@ -16,7 +16,6 @@ public class AreaVolumeCubeInt {
         int cubevolume;
         
         System.out.println("Enter the length of the cube edge : ");
-        
         arista= scanner.nextInt();
         
         facearea=arista*arista;

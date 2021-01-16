@@ -43,7 +43,7 @@ public class WS07Menus {
                     System.out.println("enter addend 2 -> ");
                     addend2 = input.nextInt();
                     sum = addend1 + addend2;
-                    System.out.println(" The sum is:  " + sum);
+                    System.out.println(" The sum is -->   " + sum);
                     break;
                 case 2:
                       int minuend;
@@ -63,7 +63,7 @@ public class WS07Menus {
                     multiplying = input.nextInt();
                     System.out.println("enter multiplier");
                     multiplier = input.nextInt();
-                    System.out.println("the multiplication of  " + multiplying + " * "  + multiplier + " The multiplcation is" + (multiplying * multiplier));
+                    System.out.println("the multiplication of  " + multiplying + " * "  + multiplier + " The multiplcation is --> " + (multiplying * multiplier));
                     break;
                 case 4:
                     int division;
