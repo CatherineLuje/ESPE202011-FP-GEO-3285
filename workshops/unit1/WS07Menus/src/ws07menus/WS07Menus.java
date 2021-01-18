@@ -46,10 +46,17 @@ public class WS07Menus {
                     System.out.println(" The sum is -->   " + sum);
                     break;
                 case 2:
+                     System.out.println("Multiplation Tables : 26");
+                     int top =26;
+                     int product=0;
+                     int table = 6;
+                     for(int j = 1; j<= top; j++){
+                     product = table * j;
+                     System.out.println("6 * " + j + "=" + product );
                       int minuend;
                       int subtrahend; 
                       int difference;
-                      System.out.println("enter ninuend");
+                      
                       minuend = input.nextInt();
                       System.out.println("enter subtrahend");
                       subtrahend = input.nextInt();

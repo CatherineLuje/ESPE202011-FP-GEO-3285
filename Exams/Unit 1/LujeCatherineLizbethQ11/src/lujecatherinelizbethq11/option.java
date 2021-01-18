@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hw04menus;
+package lujecatherinelizbethq11;
 
 /**
  *
  * @author User
  */
-class scanner {
+class option {
     
 }
