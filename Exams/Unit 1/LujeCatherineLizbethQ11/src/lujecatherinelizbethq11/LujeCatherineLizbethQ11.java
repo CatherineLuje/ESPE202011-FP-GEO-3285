@@ -38,12 +38,14 @@ public class LujeCatherineLizbethQ11 {
                     int product;
                     int table; 
                     table = input.nextInt();
-                    System.out.println("Multiplication tables" +table);
+                    System.out.println("Multiplication table" +table);
                     for(int j = 1; j<= top; j++){
                     product = table * j;
                     System.out.println( table + "*" +j +"="+ product);
+                    product ++;
+                }
                     break;
-             case 0: 
+           case 0:
                     System.out.println("Good Bye my friend");
                     System.exit(0);
                     break;

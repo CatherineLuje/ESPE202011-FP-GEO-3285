@@ -17,17 +17,16 @@ public class WS07Menus {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+      Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         int option;
         
         do {
-           System.out.println(" ========= Calculator =======");
-            System.out.println("1. -> Addition");
-            System.out.println("2. -> Subtraction");
-            System.out.println("3. -> Multiplication");
-            System.out.println("4. -> Division");
-            System.out.println("5. -> Exit");
+           System.out.println(" ========= Calculator  =======");
+            System.out.println("1. -> Cube face area  ");
+            System.out.println("2. -> Total cube area ");
+            System.out.println("3. -> Cube volume  ");
+            System.out.println("4. -> Exit");
 
             System.out.println("Enter your menu option --> ");
             option = input.nextInt();
@@ -35,54 +34,29 @@ public class WS07Menus {
             switch (option) {
 
                 case 1:
-                    int addend1;
-                    int addend2;
-                    int sum;
-                    System.out.println("enter addend 1 -> ");
-                    addend1 = input.nextInt();
-                    System.out.println("enter addend 2 -> ");
-                    addend2 = input.nextInt();
-                    sum = addend1 + addend2;
-                    System.out.println(" The sum is -->   " + sum);
+                    int arista;
+                    int facearea; 
+                    System.out.println("Enter the length of the cube edge : ");
+                    arista= input.nextInt();
+                    facearea=arista*arista;
+                    System.out.println("The cube face area is : " +facearea+ "cm^2");
                     break;
                 case 2:
-                     System.out.println("Multiplation Tables : 26");
-                     int top =26;
-                     int product=0;
-                     int table = 6;
-                     for(int j = 1; j<= top; j++){
-                     product = table * j;
-                     System.out.println("6 * " + j + "=" + product );
-                      int minuend;
-                      int subtrahend; 
-                      int difference;
-                      
-                      minuend = input.nextInt();
-                      System.out.println("enter subtrahend");
-                      subtrahend = input.nextInt();
-                      System.out.println("the substraction of " + minuend + " - " + subtrahend + " The difference is --> " + (minuend -subtrahend));
-                      break;
-                case 3:
-                    int multiplication;
-                    int multiplying; 
-                    int multiplier;
-                    System.out.println("enter multiplying");
-                    multiplying = input.nextInt();
-                    System.out.println("enter multiplier");
-                    multiplier = input.nextInt();
-                    System.out.println("the multiplication of  " + multiplying + " * "  + multiplier + " The multiplcation is --> " + (multiplying * multiplier));
+                    int cubearea; 
+                    System.out.println("Enter the length of the cube edge : ");
+                    arista= input.nextInt();
+                    cubearea=6*arista*arista;
+                    System.out.println("The total area of the cube is : "+cubearea+ "c^2");
+                    break;
+                    
+                case 3: 
+                    int cubevolume;
+                    System.out.println("Enter the length of the cube edge : ");
+                    arista= input.nextInt();
+                    cubevolume=arista*arista*arista;
+                    System.out.println("The volume of the cube is " +cubevolume+ "cm^3");
                     break;
                 case 4:
-                    int division;
-                    int dividend;
-                    int divisor;
-                    System.out.println("enter dividend");
-                    dividend = input.nextInt();
-                    System.out.println("enter divisor");
-                    divisor  = input.nextInt();
-                    System.out.println("the division of " + dividend + " / " + divisor + " The division is --> " +( dividend / divisor ));
-                    break;
-                case 5:
                     System.out.println("Good Bye my friend");
                     System.exit(0);
                     break;
@@ -91,7 +65,7 @@ public class WS07Menus {
                     break;
             }
 
-        } while (option != 5);
+        } while (option != 4);
 
     }
 
