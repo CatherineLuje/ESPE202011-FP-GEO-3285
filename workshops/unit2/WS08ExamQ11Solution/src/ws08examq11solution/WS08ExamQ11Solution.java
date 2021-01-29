@@ -17,8 +17,8 @@ public class WS08ExamQ11Solution {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-     int multiplicand = 0;
+
+        int multiplicand = 0;
         int multiplier = 1;
         int product;
         int stop = 12;
