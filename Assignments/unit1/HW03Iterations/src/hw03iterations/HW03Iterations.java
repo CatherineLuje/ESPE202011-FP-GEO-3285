@@ -39,7 +39,8 @@ public class HW03Iterations {
              System.out.println(" Multiplies of 12  ");
              for(int k = 0; k <= 180 ; k+=12){
                  System.out.println(k);
-          }   
+          } 
+             
     }
   }
 
