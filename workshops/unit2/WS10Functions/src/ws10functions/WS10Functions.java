@@ -15,7 +15,7 @@ public class WS10Functions {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       int divd = 5;
+        int divd = 5;
         int divr = 10;
         float quotient = 0;
         int x = 0;
@@ -23,17 +23,17 @@ public class WS10Functions {
 
         //call to divideTwoNumbers() function
         quotient = divideTwoNumbers(divd, divr);
-        System.out.println("Quotient of 5 and 10 is -> " + quotient); 
+        System.out.println("Quotient of 5 -> " + quotient);
 
         y = f(3);
         System.out.println("3^2 -> " + y);
 
         y = f(-3);
-        System.out.println("-3^2 -> " + y); 
-        
+        System.out.println("-3^2 -> " + y);
+
         x = -1;
         y = f(x);
-        System.out.println("the square of -> " + x + " <- is equal to -> " + y);
+        System.out.println("The square of -> " + x + " <- is equal to -> " + y);
 
     }
 
