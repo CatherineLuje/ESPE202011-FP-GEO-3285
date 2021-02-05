@@ -20,8 +20,7 @@ public class WS10Functions {
         float quotient = 0;
         int x = 0;
         int y = 0;
-
-        //call to divideTwoNumbers() function
+           //call to divideTwoNumbers() function
         quotient = divideTwoNumbers(divd, divr);
         System.out.println("Quotient of 5 -> " + quotient);
 
@@ -64,4 +63,5 @@ public class WS10Functions {
         return y;
     }
 
+ 
 }

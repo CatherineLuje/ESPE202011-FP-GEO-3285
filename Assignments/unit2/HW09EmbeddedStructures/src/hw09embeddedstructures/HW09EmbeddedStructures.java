@@ -35,40 +35,61 @@ public class HW09EmbeddedStructures {
             scanner.nextLine();
 
             if (operator1 % 2 == 0 && operator2 % 2 == 0) {
-                result = operator1 * operator2;
-                System.out.println("The multiplication is : " + operator1 + " x " + operator2 + " = " + result);
-
+                showMultiplication(operator1, operator2);
             } else if (operator1 % 3 == 0 && operator2 % 3 == 0) {
-                result = operator1 + operator2;
-                System.out.println("The sum is: " + operator1 + " + " + operator2 + " = " + result);
-
+                showAddition(operator1, operator2);
             } else if (operator1 % 7 == 0 && operator2 % 7 == 0) {
-                result = operator1 % operator2;
-                System.out.println("The module is: " + operator1 + " % " + operator2 + " = " + result);
-
+                showModulus(operator1, operator2);
             } else if (operator1 % 11 == 0 && operator2 % 11 == 0) {
-                System.out.println("The multiplication table of operand 1 is: ");
-                for (int i = 1; i <= 12; i++) {
-                    result = (operator1 * i);
-
-                    System.out.println(operator1 + " x " + i + " = " + result);
-                }
-                System.out.println("The multiplication table of operand 2 is: ");
-                if (operator1 != operator2) {
-                    for (int k = 1; k <= 12; k++) {
-                        System.out.println(operator2 + " x " + k + " = " + (operator2 * k));
-                    }
-                }
+                showMultiplicationTables(operator1, operator2);
             } else if (operator1 % 13 == 0 && operator2 % 13 == 0) {
-                result = (operator1 / operator2);
-                System.out.println("The division is:  " + operator1 + " / " + operator2 + " = " + result);
+                showDivision(operator1, operator2);
             } else {
                 System.out.println("The program does not calculate this operation");
             }
 
-            System.out.println("Do you want try it again? ,"  + " if you don’t, select w  " );
+            System.out.println("Do you want try it again? ," + " if you don’t, select w  ");
             option = scanner.nextLine().charAt(0);
-
         } while (option != 'w');
+    }
+    private static void showMultiplication(int operator1, int operator2) {
+        int result;
+        result = operator1 * operator2;
+        System.out.println("The multiplication is : " + operator1 + " x " + operator2 + " = " + result);
+    }
+
+    private static void showDivision(int operator1, int operator2) {
+        int result;
+        result = (operator1 / operator2);
+        System.out.println("The division is:  " + operator1 + " / " + operator2 + " = " + result);
+    }
+
+    private static void showModulus(int operator1, int operator2) {
+        int result;
+        result = operator1 % operator2;
+        System.out.println("The module is: " + operator1 + " % " + operator2 + " = " + result);
+    }
+
+    private static void showAddition(int operator1, int operator2) {
+        int result;
+        result = operator1 + operator2;
+        System.out.println("The sum is: " + operator1 + " + " + operator2 + " = " + result);
+    }
+
+    public static void showMultiplicationTables(int paramoperator1, int paramoperator2) {
+        int result;
+        System.out.println("The multiplication table of operand 1 is: ");
+        for (int i = 1; i <= 12; i++) {
+            result = (paramoperator1 * i);
+
+            System.out.println(paramoperator1 + " x " + i + " = " + result);
+        }
+        System.out.println("The multiplication table of operand 2 is: ");
+        if (paramoperator1 != paramoperator2) {
+            for (int k = 1; k <= 12; k++) {
+                System.out.println(paramoperator2 + " x " + k + " = " + (paramoperator2 * k));
+            }
+        }
+
     }
 }
