@@ -18,7 +18,7 @@ public class WS11Recursion {
         int number = 5;
         int fact = 0;
         fact = factorial(number);
-        System.out.println("factorial of:" + number + "is equal to-->" + fact);
+        System.out.println("Factorial of:" + number + "is equal to-->" + fact);
     }
 
     public static int factorial(int n) {
