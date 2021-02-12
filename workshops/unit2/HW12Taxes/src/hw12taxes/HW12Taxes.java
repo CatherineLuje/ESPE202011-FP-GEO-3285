@@ -18,13 +18,13 @@ public class HW12Taxes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         float product = 0.0F;
-        float iva = 0;
-        float taxbase = 0;
-        float value = 0;
-        float ISD = 0;
+        float iva = 0.00F;
+        float taxbase = 0.00F;
+        float value = 0.00F;
+        float ISD = 0.00F;
 
         System.out.println("Enter product value: ");
         product = scanner.nextFloat();
@@ -43,7 +43,7 @@ public class HW12Taxes {
     public static void calculateCurrencyValue(float value) {
         float ISD;
         if (value > 1200) {
-            ISD = (float) ((value - 1200) * 0.05);
+            ISD = (float) ((value - 1200) * 0.05F);
             System.out.println("The value to be paid for foreign currency outflows is:  " + ISD);
 
         } else {
@@ -53,6 +53,7 @@ public class HW12Taxes {
             }
         }
     }
+
     public static void calculateIncomeTax(float taxbase) {
         if (taxbase > 0 && taxbase <= 11212) {
 
@@ -63,25 +64,25 @@ public class HW12Taxes {
             System.out.println("The Tax on the basic fraction is " + ((taxbase - 11212) * 0.05F));
         }
         if (taxbase >= 14825 && taxbase <= 17854) {
-            System.out.println("The Tax on the basic fraction is " + (154 + (taxbase - 14825) * 0.1));
+            System.out.println("The Tax on the basic fraction is " + (154 + (taxbase - 14825) * 0.1F));
         }
         if (taxbase >= 17854 && taxbase <= 21442) {
-            System.out.println("The Tax on the basic fraction is " + (511 + (taxbase - 17854) * 0.12));
+            System.out.println("The Tax on the basic fraction is " + (511 + (taxbase - 17854) * 0.12F));
         }
         if (taxbase >= 21442 && taxbase <= 42874) {
-            System.out.println("The Tax on the basic fraction is " + (941 + (taxbase - 21442) * 0.15));
+            System.out.println("The Tax on the basic fraction is " + (941 + (taxbase - 21442) * 0.15F));
         }
         if (taxbase >= 42874 && taxbase <= 64297) {
-            System.out.println("The Tax on the basic fraction is " + (4156 + (taxbase - 42874) * 0.2));
+            System.out.println("The Tax on the basic fraction is " + (4156 + (taxbase - 42874) * 0.2F));
         }
         if (taxbase >= 64297 && taxbase <= 85729) {
-            System.out.println("The Tax on the basic fraction is " + (8440 + (taxbase - 64297) * 0.25));
+            System.out.println("The Tax on the basic fraction is " + (8440 + (taxbase - 64297) * 0.25F));
         }
         if (taxbase >= 85729 && taxbase <= 114288) {
-            System.out.println("The Tax on the basic fraction is " + (8440 + (taxbase - 85729) * 0.3));
+            System.out.println("The Tax on the basic fraction is " + (8440 + (taxbase - 85729) * 0.3F));
         }
         if (taxbase >= 114288) {
-            System.out.println("The Tax on the basic fraction is " + (22366 + (taxbase - 114288) * 0.35));
+            System.out.println("The Tax on the basic fraction is " + (22366 + (taxbase - 114288) * 0.35F));
 
         }
     }
