@@ -23,7 +23,6 @@ public class AreaVolumeCubeFloat {
         cubevolume=arista*arista*arista;
         
         System.out.println("The cube face area is : " +facearea+ "cm^2");
-        System.out.println("The total area of the cube is : "+cubearea+ "c^2");
         System.out.println("The volume of the cube is " +cubevolume+ "cm^3");
      
     }
