@@ -33,6 +33,12 @@ public class HW15MatrixOperation {
         System.out.println("Enter the number of columns in the matrix");
         columns = input.nextInt();
 
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                matrixC[rows][columns] = matrixA[rows][columns] - matrixB[rows][columns];
+            }
+        }
+
         System.out.println("Enter the values for matrix A ");
         for (int i = 0; i < rows; i++) {
             System.out.println("");
@@ -49,11 +55,6 @@ public class HW15MatrixOperation {
                 System.out.println("\t" + matrixB[rows][columns]);
             }
 
-        }
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                matrixC[rows][columns] = matrixA[rows][columns] - matrixB[rows][columns];
-            }
         }
         System.out.println("\nEquals to -> ");
         for (int i = 0; i < rows; i++) {
