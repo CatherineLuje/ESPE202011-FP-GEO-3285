@@ -42,7 +42,7 @@ public class HW15MatrixOperation {
         for (int i = 0; i < rows; i++) {
             System.out.println("");
             for (int j = 0; j < columns; j++) {
-                System.out.println("\t" + matrixA[rows][columns]);
+                System.out.println("\t" + matrixA[i][j]);
                 System.out.println("rows["+(i+1)+"]["+(j+1)+"]->");
                 matrixA[i][j] = input.nextInt();
             }
@@ -51,8 +51,8 @@ public class HW15MatrixOperation {
         for (int i = 0; i < rows; i++) {
             System.out.println("");
             for (int j = 0; j < columns; j++) {
-                matrixB[rows][columns] = input.nextInt();
-                System.out.println("\t" + matrixB[rows][columns]);
+                matrixB[i][j] = input.nextInt();
+                System.out.println("\t" + matrixB[i][j]);
             }
 
         }
@@ -60,7 +60,7 @@ public class HW15MatrixOperation {
         for (int i = 0; i < rows; i++) {
             System.out.println("");
             for (int j = 0; j < columns; j++) {
-                System.out.print("\t " + matrixC[rows][columns]);
+                System.out.print("\t " + matrixC[i][j]);
             }
         }
 
