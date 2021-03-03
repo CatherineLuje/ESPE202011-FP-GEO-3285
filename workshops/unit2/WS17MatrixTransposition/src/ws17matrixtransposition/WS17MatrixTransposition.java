@@ -109,9 +109,9 @@ public class WS17MatrixTransposition {
             for (int j = 0; j < n; j++) {
                 if (j == 0) {
                     if (i == 0) {
-                        System.out.println("/ \t");
+                        System.out.println("\t");
                     } else if (i == m - 1) {
-                        System.out.println("\\\t");
+                        System.out.println("\t");
 
                     } else {
                         System.out.println(" \t");

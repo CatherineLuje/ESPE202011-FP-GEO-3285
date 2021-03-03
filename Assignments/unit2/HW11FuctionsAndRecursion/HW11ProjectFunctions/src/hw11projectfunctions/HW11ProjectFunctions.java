@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author User
+ * @author Luje Catherine
  */
 public class HW11ProjectFunctions {
 
@@ -49,6 +49,34 @@ public class HW11ProjectFunctions {
                             transformGeographicCoordinatesSouthToEast(input, distance);
                             break;
                     }
+                case 3:
+                    int total = 0;
+                    System.out.print(" Enter the number of times you want to perform menu 1 -> ");
+                    total = input.nextInt();
+                    for (int i = 0; i < total; i++) {
+                        double dis;
+                        double[] x;
+                        double[] y;
+                        double[] x2;
+                        double[] y2;
+                        double variationX;
+                        double variationY;
+                        double azimut = 0;
+                        x = new double[total];
+
+                        x = new double[total];
+                        y = new double[total];
+                        x2 = new double[total];
+                        y2 = new double[total];
+
+                        azimut = transformGeographicCoordinatesToPolar(x, i, input, y, x2, y2);
+
+                        // Transformation from decimals to sexagecimals
+                        printDecimalToSexagecimalTransformation(azimut);
+                    }
+
+                    break;
+
                 case 0:
                     System.out.println("Good Bye my friend");
                     System.exit(0);
@@ -61,46 +89,94 @@ public class HW11ProjectFunctions {
         } while (option != 0);
     }
 
-    private static void transformGeographicCoordinatesSouthToEast(Scanner input, double d) {
-        double x5;
-        double y5;
-        double ann3;
+    public static double transformGeographicCoordinatesToPolar(double[] x, int i, Scanner input, double[] y, double[] x2, double[] y2) {
+        double variationX;
+        double variationY;
+        double distance;
+        double azimut;
+        System.out.println("--Coordinate A--");
+        System.out.print("Enter rectangular coordinate x: ");
+        x[i] = input.nextDouble();
+        System.out.print("Enter rectangular coordinate y: ");
+        y[i] = input.nextDouble();
+        System.out.println("--Coordinate B--");
+        System.out.print("Enter rectangular coordinate x: ");
+        x2[i] = input.nextDouble();
+        System.out.print("Enter rectangular coordinate y: ");
+        y2[i] = input.nextDouble();
+        variationX = x2[i] - x[i];
+        variationY = y2[i] - y[i];
+        distance = Math.sqrt(Math.pow(variationX, 2) + Math.pow(variationY, 2));
+        azimut = Math.atan(variationX / variationY);
+        azimut = azimut + 360;
+        if (variationX > 0 & variationY > 0) {
+            System.out.println("The azimuth is: " + String.format("%.2f", azimut));
+        }
+        if (variationX > 0 & variationY < 0) {
+            System.out.println("The azimuth is: " + String.format("%.2f", azimut));
+        }
+        if (variationX < 0 & variationY > 0) {
+            azimut = azimut - 180;
+            System.out.println("The azimuth is: " + String.format("%.2f", azimut));
+        }
+        if (variationX < 0 & variationY < 0) {
+            azimut = azimut + 180;
+            System.out.println("The azimuth is: " + String.format("%.2f", azimut));
+        }
+        return azimut;
+    }
+
+    public static void printDecimalToSexagecimalTransformation(double azimut) {
+        int degrees = (int) azimut;
+        double fractionalDegrees = azimut - degrees;
+        double minutesWithFraction = 60 * fractionalDegrees;
+        int minutes = (int) minutesWithFraction;
+        double fractionalMinutes = minutesWithFraction - minutes;
+        double secondsWithFraction = 60 * fractionalMinutes;
+        int seconds = (int) Math.round(secondsWithFraction);
+        System.out.println("The polar coordinate is: " + degrees + "°" + minutes + "'" + seconds + "'' ");
+    }
+
+    private static void transformGeographicCoordinatesSouthToEast(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
         System.out.println("Enter the angle:");
-        ann3 = input.nextInt();
-        double annr3 = Math.toRadians(ann3);
-        double annsrx3 = Math.sin(annr3);
-        double annsry3 = Math.cos(annr3);
-        x5 = d * annsrx3;
-        y5 = d * annsry3;
-        System.out.println("The coordinate is:  X=" + String.format("%.2f", x5) + ", Y=-" + String.format("%.2f", y5));
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglety = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglety;
+        System.out.println("The coordinate is:  X=" + String.format("%.2f", x) + ", Y=-" + String.format("%.2f", y));
     }
 
-    private static void transformGeographicCoordinatesSouthToWest(Scanner input, double d) {
-        double x4;
-        double y4;
-        double ann2;
+    private static void transformGeographicCoordinatesSouthToWest(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
         System.out.println("Enter Angle:");
-        ann2 = input.nextInt();
-        double annr2 = Math.toRadians(ann2);
-        double annsrx2 = Math.sin(annr2);
-        double annsry2 = Math.cos(annr2);
-        x4 = d * annsrx2;
-        y4 = d * annsry2;
-        System.out.println("The coordinate is:  X=-" + String.format("%.2f", x4) + ", Y=-" + String.format("%.2f", y4));
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglery;
+        System.out.println("The coordinate is:  X=-" + String.format("%.2f", x) + ", Y=-" + String.format("%.2f", y));
     }
 
-    private static void transformGeographicCoordinatesNorthToWest(Scanner input, double d) {
-        double x3;
-        double y3;
-        double ann1;
+    private static void transformGeographicCoordinatesNorthToWest(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
         System.out.println("Enter Angle:");
-        ann1 = input.nextInt();
-        double annr1 = Math.toRadians(ann1);
-        double annsrx1 = Math.sin(annr1);
-        double annsry1 = Math.cos(annr1);
-        x3 = d * annsrx1;
-        y3 = d * annsry1;
-        System.out.println("The coordinate is:  X=-" + String.format("%.2f", x3) + ", Y=" + String.format("%.2f", y3));
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglery;
+        System.out.println("The coordinate is:  X=-" + String.format("%.2f", x) + ", Y=" + String.format("%.2f", y));
     }
 
     private static double showGeographicCoordinatesMenu(Scanner input) {
@@ -152,23 +228,24 @@ public class HW11ProjectFunctions {
         System.out.println(" ========= Coordinate Transformation =======");
         System.out.println("1.Transformation from Rectangular to Geographic Coordinates ");
         System.out.println("2.Transformation of Geographic Coordinates to Rectangular ");
+        System.out.println("3.Transformation of Geographic Coordinates to Rectangular to Polar");
         System.out.println("0.Exit");
         System.out.println("Enter your menu option --> ");
         option = input.nextInt();
         return option;
     }
 
-    private static void transformCoordinateNorthToEast(Scanner input, double d) {
-        double x2;
-        double y2;
-        double ann;
+    private static void transformCoordinateNorthToEast(Scanner input, double distance) {
+        double x;
+        double y;
+        double angle;
         System.out.println("Enter Angle:");
-        ann = input.nextInt();
-        double annr = Math.toRadians(ann);
-        double annsrx = Math.sin(annr);
-        double annsry = Math.cos(annr);
-        x2 = d * annsrx;
-        y2 = d * annsry;
-        System.out.println("The coordinate is:  X=" + String.format("%.2f", x2) + ", Y=" + String.format("%.2f", y2));
+        angle = input.nextInt();
+        double angler = Math.toRadians(angle);
+        double anglerx = Math.sin(angler);
+        double anglery = Math.cos(angler);
+        x = distance * anglerx;
+        y = distance * anglery;
+        System.out.println("The coordinate is:  X=" + String.format("%.2f", x) + ", Y=" + String.format("%.2f", y));
     }
 }
