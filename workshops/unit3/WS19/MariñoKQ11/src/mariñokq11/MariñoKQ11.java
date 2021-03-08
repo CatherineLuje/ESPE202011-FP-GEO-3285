@@ -30,7 +30,7 @@ public class MariñoKQ11 {
         
         
         System.out.println("Average of the numbers");
-        //CalculatorAverageTheArray(numbers, scanner, sumNumbers);
+        CalculatorAverageTheArray(numbers, scanner, sumNumbers);
         
     }
 
