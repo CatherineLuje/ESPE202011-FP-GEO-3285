@@ -33,9 +33,7 @@ public class HW18SearchAlgorithms {
         System.out.println("----Linear Search----");
         System.out.print("Enter the age to search: ");
         searchAge = input.nextInt();
-
         position = LinearSearch.search(ages, searchAge);
-
         System.out.println("Age is in the position: " + position);
 
         System.out.println("");

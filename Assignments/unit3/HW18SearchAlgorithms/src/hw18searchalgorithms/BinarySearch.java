@@ -11,19 +11,19 @@ package hw18searchalgorithms;
  */
 public class BinarySearch {
 
-    public static int binarySearch(int elements[], int left, int right, int x) {
+    public int binarySearch(int elements[], int left, int right, int x) {
         if (right >= left) {
 
-            int mind = left + (right - left) / 2;
+            int mid = left + (right - left) / 2;
 
-            if (elements[mind] == x) {
-                return mind;
+            if (elements[mid] == x) {
+                return mid;
             }
-            if (elements[mind] > x) {
-                return binarySearch(elements, left, mind - 1, x);
+            if (elements[mid] > x) {
+                return binarySearch(elements, left, mid - 1, x);
             }
-            if (elements[mind] < x) {
-                return binarySearch(elements, mind + 1, right, x);
+            if (elements[mid] < x) {
+                return binarySearch(elements, mid + 1, right, x);
             }
         }
         return -1;
