@@ -7,7 +7,7 @@ package hw18searchalgorithms;
 
 /**
  *
- * @author User
+ * @author Luje Catherine
  */
 public class LinearSearch {
      public static int search(int elements[], int x) {
