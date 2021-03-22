@@ -23,7 +23,7 @@ public class HW14BooksAndCountriesArrays {
         float[] costByBook = {12.5F, 13.25F, 21.02F, 10.30F, 24.12F, 23.12F, 9.75F, 11.20F, 6.12F};
         int n;
         System.out.print("Enter the number of shelves: ");
-        n = input.nextInt();
+    n = input.nextInt();
 
         booksByShelf = new int[n];
 
