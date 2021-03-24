@@ -21,30 +21,31 @@ public class HW19SearchingForm {
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
-        int[] ages = new int[6];
-        int searchAge;
+        int[] numbers = new int[6];
+        int searchNumber;
         int position;
-        for (int i = 0; i < ages.length; i++) {
-            ages[i] = Integer.parseInt(JOptionPane.showInputDialog("Enter ages"));
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = Integer.parseInt(JOptionPane.showInputDialog("Enter ages"));
         }
         System.out.println("");
         System.out.println("");
-        for (int i = 0; i < ages.length; i++) {
-            System.out.print(ages[i] + ", ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + ", ");
         }
-        Arrays.sort(ages);
-        System.out.println("\t" + Arrays.toString(ages));
-        System.out.print("Enter the age to search: ");
-        searchAge = input.nextInt();
-        Arrays.sort(ages);
-        position = Arrays.binarySearch(ages, searchAge);
-        JOptionPane.showMessageDialog(null, searchAge);
+        Arrays.sort(numbers);
+        System.out.println("\t" + Arrays.toString(numbers));
+        System.out.print("Enter the number to search: ");
+        searchNumber = input.nextInt();
+        Arrays.sort(numbers);
+        position = Arrays.binarySearch(numbers, searchNumber);
+        printCondition(position);
+    }
 
- 
+    public static void printCondition(int position) {
         if (position != -1) {
-            System.out.println("Age found in position " + position);
+            System.out.println("Number  found in position "+position);
         } else {
-            System.out.println("Age not found ");
+            System.out.println("Number not found ");
         }
     }
 
