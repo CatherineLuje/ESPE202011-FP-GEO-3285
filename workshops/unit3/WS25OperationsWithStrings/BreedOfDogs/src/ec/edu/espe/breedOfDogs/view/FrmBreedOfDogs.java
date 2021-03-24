@@ -30,6 +30,7 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtDogsName = new javax.swing.JTextField();
@@ -44,11 +45,19 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
         txtDogsAge = new javax.swing.JTextField();
         txtWeight = new javax.swing.JTextField();
 
+        jLabel2.setText("jLabel2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("BREED OF DOGS");
 
         jLabel3.setText("Dog's Name");
+
+        txtDogsName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDogsNameActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Dog's Age");
 
@@ -112,11 +121,12 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
                     .addComponent(txtDogsName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDogsAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel7)
+                        .addComponent(txtDogsAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -145,7 +155,7 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
         
     
         dogsName=txtDogsName.getText();
-        dogsAge= Integer.parseInt(txtDogsAge.getText());
+        
         weight=Float.parseFloat(txtWeight.getText());
         breedOfDogs=cmbBreedOfDogs.getSelectedItem().toString();
         
@@ -154,6 +164,10 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtDogsNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDogsNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDogsNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,6 +209,7 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbBreedOfDogs;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
