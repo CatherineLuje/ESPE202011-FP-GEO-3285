@@ -80,6 +80,12 @@ public class FrmSortingInteger extends javax.swing.JFrame {
             }
         });
 
+        txtSortedIntegers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSortedIntegersActionPerformed(evt);
+            }
+        });
+
         jLabel8.setText("Number to seacrh for");
 
         jLabel9.setText("Sorted Integers");
@@ -127,12 +133,12 @@ public class FrmSortingInteger extends javax.swing.JFrame {
                                                 .addComponent(txtNumberToSearchFor, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtSortedIntegers, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(162, 162, 162)
                                                 .addComponent(lblSortedArray)
                                                 .addGap(10, 10, 10)
-                                                .addComponent(txtSortedArray))
-                                            .addComponent(txtSortedIntegers, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(txtSortedArray)))
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(118, 118, 118))))
         );
@@ -169,7 +175,7 @@ public class FrmSortingInteger extends javax.swing.JFrame {
                     .addComponent(txtInteger6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSortedArray)
+                    .addComponent(txtSortedArray, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSortedArray))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -179,7 +185,7 @@ public class FrmSortingInteger extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSort)
                     .addComponent(btnSearch))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -231,6 +237,10 @@ public class FrmSortingInteger extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtSortedIntegersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSortedIntegersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSortedIntegersActionPerformed
 
     /**
      * @param args the command line arguments
