@@ -1,0 +1,4 @@
+
+Antisana, Sierra, 5704.0, false, Estrato
+Cotopaxi, Sierra, 5897.0, false, Estrato
+Sangay, Amazonia, 5300.0, true, Estrato
