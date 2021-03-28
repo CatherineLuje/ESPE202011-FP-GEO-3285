@@ -72,10 +72,10 @@ public class FileManager {
             BufferedReader br = new BufferedReader(fr);
             String d;
             while ((d = br.readLine()) != null) {
-                StringTokenizer dato = new StringTokenizer(d, ", ");
+                StringTokenizer data = new StringTokenizer(d, ", ");
                 Vector x = new Vector();
-                while (dato.hasMoreTokens()){
-                x.addElement(dato.nextToken());
+                while (data.hasMoreTokens()){
+                x.addElement(data.nextToken());
             }md1Tabla.addRow(x);
         }
     }
