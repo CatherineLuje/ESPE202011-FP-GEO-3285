@@ -15,7 +15,7 @@ import utils.FileManager;
 public class VolcanoController {
 
     public void save(Volcano volcano){
-       String data = volcano.getName() + ", " + volcano.getRegion() + ", " + volcano.getAtitude() + ", " + volcano.isIsActive() + ", " + volcano.getTypeOfVolcano();
+       String data = volcano.getName() + "," + volcano.getRegion() + "," + volcano.getAtitude() + "," + volcano.isIsActive() + "," + volcano.getTypeOfVolcano();
        FileManager.save(data, "Volcanoes");
       
     }

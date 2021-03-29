@@ -54,7 +54,7 @@ public class FrmVolcano extends javax.swing.JFrame {
         cmbTypeOfVolcano = new javax.swing.JComboBox<>();
         btnShowData = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableVolcano = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,14 +96,14 @@ public class FrmVolcano extends javax.swing.JFrame {
 
         cmbTypeOfVolcano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estrato", "Caldera", "Escudo", "Domo de lava", "Escoria" }));
 
-        btnShowData.setText("Show Data");
+        btnShowData.setText("Show  Volcanoes");
         btnShowData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowDataActionPerformed(evt);
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableVolcano.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -114,7 +114,7 @@ public class FrmVolcano extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableVolcano);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,20 +137,19 @@ public class FrmVolcano extends javax.swing.JFrame {
                     .addComponent(txtName))
                 .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
+                .addGap(155, 155, 155)
                 .addComponent(btmSave)
-                .addGap(58, 58, 58)
+                .addGap(38, 38, 38)
                 .addComponent(btnShowData)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(220, 220, 220)
+                .addComponent(jLabel1)
+                .addContainerGap(288, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,9 +180,9 @@ public class FrmVolcano extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btmSave)
                     .addComponent(btnShowData))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,14 +207,14 @@ public class FrmVolcano extends javax.swing.JFrame {
         volcano = new Volcano(name, region, altitude, isActive, typeOfVolcan);
         volcanoController.save(volcano);
         JOptionPane.showMessageDialog(rootPane, volcano.getName());
-        DefaultTableModel md1Tabla;
+        DefaultTableModel table;
         volcanoes.addElement("Name");
         volcanoes.addElement("Regiom");
         volcanoes.addElement("Altitude");
         volcanoes.addElement("Is Active");
         volcanoes.addElement("Type of volcano");
-        md1Tabla= new DefaultTableModel(volcanoes,0);
-        jTable2.setModel(md1Tabla);
+        table= new DefaultTableModel(volcanoes,0);
+        jTableVolcano.setModel(table);
         
         
         
@@ -225,7 +224,7 @@ public class FrmVolcano extends javax.swing.JFrame {
     private void btnShowDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowDataActionPerformed
         try {
             FileManager FileManager = new FileManager();
-            jTable2.setModel(FileManager.listavolcanes());
+            jTableVolcano.setModel(FileManager.readList());
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FrmVolcano.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -281,7 +280,7 @@ public class FrmVolcano extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableVolcano;
     private javax.swing.JTextField txtAltitude;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables

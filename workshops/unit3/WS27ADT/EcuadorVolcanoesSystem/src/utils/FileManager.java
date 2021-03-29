@@ -45,8 +45,8 @@ public class FileManager {
         boolean saved = false;
         createFile(fileName);
         try {
-            FileWriter myWrite = new FileWriter(fileName + ".txt", true);
-            myWrite.write(System.getProperty("line.separator") + data);
+            FileWriter myWrite = new FileWriter(fileName + ".csv", true);
+            myWrite.write( data+ System.getProperty("line.separator")) ;
             myWrite.close();
             System.out.println("a new record of " + fileName + " was saved");
             saved = true;
@@ -58,30 +58,30 @@ public class FileManager {
 
     }
 
-    public DefaultTableModel listavolcanes() throws FileNotFoundException {
+    public DefaultTableModel readList() throws FileNotFoundException {
         Vector volcanoes = new Vector();
         volcanoes.addElement("Name");
         volcanoes.addElement("Region");
         volcanoes.addElement("Altitude");
         volcanoes.addElement("Is Active");
         volcanoes.addElement("Type of Volcano");
-        DefaultTableModel md1Tabla = new DefaultTableModel(volcanoes, 0);
+        DefaultTableModel table = new DefaultTableModel(volcanoes, 0);
 
         try {
-            FileReader fr = new FileReader("Volcanoes.txt");
+            FileReader fr = new FileReader("Volcanoes.csv");
             BufferedReader br = new BufferedReader(fr);
             String d;
             while ((d = br.readLine()) != null) {
-                StringTokenizer data = new StringTokenizer(d, ", ");
+                StringTokenizer data = new StringTokenizer(d, ",");
                 Vector x = new Vector();
                 while (data.hasMoreTokens()){
                 x.addElement(data.nextToken());
-            }md1Tabla.addRow(x);
+            }table.addRow(x);
         }
     }
     catch (Exception e){
             JOptionPane.showMessageDialog(null, e);
     }
-return md1Tabla;
+return table;
 }
 }
