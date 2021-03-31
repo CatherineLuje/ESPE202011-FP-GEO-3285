@@ -26,7 +26,7 @@ public class FrmVolcano extends javax.swing.JFrame {
      */
     public FrmVolcano() {
         initComponents();
-        
+
     }
 
     /**
@@ -47,14 +47,15 @@ public class FrmVolcano extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        cmbRegion = new javax.swing.JComboBox<>();
-        txtAltitude = new javax.swing.JTextField();
-        cmbIsActive = new javax.swing.JComboBox<>();
+        txtWeight = new javax.swing.JTextField();
+        cmbTypeofSatellites = new javax.swing.JComboBox<>();
         btmSave = new javax.swing.JButton();
-        cmbTypeOfVolcano = new javax.swing.JComboBox<>();
+        cmbOrbiType = new javax.swing.JComboBox<>();
         btnShowData = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableVolcano = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        txtCreationDate = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,17 +76,15 @@ public class FrmVolcano extends javax.swing.JFrame {
 
         jLabel2.setText("Name");
 
-        jLabel3.setText("Region");
+        jLabel3.setText("Creation date");
 
-        jLabel4.setText("Altitude");
+        jLabel4.setText("weight");
 
-        jLabel6.setText("Is Active");
+        jLabel6.setText("type of satellite");
 
-        jLabel7.setText("Type of Volcano");
+        jLabel7.setText("orbit type");
 
-        cmbRegion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sierra", "Costa", "Amazonia", "Insular" }));
-
-        cmbIsActive.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "True", "False" }));
+        cmbTypeofSatellites.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Observation", "Telecommunication", "Communication", "Meteorological", "Navigation", "Space stations" }));
 
         btmSave.setText("Save");
         btmSave.addActionListener(new java.awt.event.ActionListener() {
@@ -94,9 +93,9 @@ public class FrmVolcano extends javax.swing.JFrame {
             }
         });
 
-        cmbTypeOfVolcano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estrato", "Caldera", "Escudo", "Domo de lava", "Escoria" }));
+        cmbOrbiType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baja", "Media ", "Terrestre" }));
 
-        btnShowData.setText("Show  Volcanoes");
+        btnShowData.setText("Show  ");
         btnShowData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowDataActionPerformed(evt);
@@ -128,14 +127,20 @@ public class FrmVolcano extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmbRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAltitude, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbIsActive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbTypeOfVolcano, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtName))
-                .addGap(120, 120, 120))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTypeofSatellites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbOrbiType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtName))
+                        .addGap(120, 120, 120))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCreationDate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addComponent(btmSave)
@@ -143,13 +148,14 @@ public class FrmVolcano extends javax.swing.JFrame {
                 .addComponent(btnShowData)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel1)
-                .addContainerGap(288, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,48 +169,50 @@ public class FrmVolcano extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(cmbRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5)
+                    .addComponent(txtCreationDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtAltitude, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(cmbIsActive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbTypeofSatellites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(cmbTypeOfVolcano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbOrbiType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btmSave)
                     .addComponent(btnShowData))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btmSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmSaveActionPerformed
-        Volcano volcano;
+        Satellite satellite;
         String name;
-        String region;
-        float altitude;
-        boolean isActive;
-        String typeOfVolcan;
-        Vector volcanoes= new Vector();
-        
+        String creationDate;
+        float weight;
+        String typeofStellite;
+        String orbitType;
+        Vector volcanoes = new Vector();
+
         VolcanoController volcanoController = new VolcanoController();
-        
+
         name = txtName.getText();
-        region = cmbRegion.getSelectedItem().toString();
-        altitude = Float.parseFloat(txtAltitude.getText());
-        isActive = Boolean.parseBoolean(cmbIsActive.getSelectedItem().toString());
-        typeOfVolcan = cmbTypeOfVolcano.getSelectedItem().toString();
-        volcano = new Volcano(name, region, altitude, isActive, typeOfVolcan);
+        creationDate = txtCreationDate.getText();
+        weight = Float.parseFloat(txtWeight.getText());
+        typeofStellite = cmbTypeofSatellites.getSelectedItem().toString();
+        orbitType = cmbOrbiType.getSelectedItem().toString();
+        
+        satellite = new Volcano(name,creationDate,weight,typeofStellite,orbitType);
         volcanoController.save(volcano);
         JOptionPane.showMessageDialog(rootPane, volcano.getName());
         DefaultTableModel table;
@@ -213,20 +221,18 @@ public class FrmVolcano extends javax.swing.JFrame {
         volcanoes.addElement("Altitude");
         volcanoes.addElement("Is Active");
         volcanoes.addElement("Type of volcano");
-        table= new DefaultTableModel(volcanoes,0);
+        table = new DefaultTableModel(volcanoes, 0);
         jTableVolcano.setModel(table);
-        
-        
-        
+
 
     }//GEN-LAST:event_btmSaveActionPerformed
 
     private void btnShowDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowDataActionPerformed
         try {
             FileManager FileManager = new FileManager();
-            jTableVolcano.setModel(FileManager.readList());
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FrmVolcano.class.getName()).log(Level.SEVERE, null, ex);
+            jTableVolcano.setModel(FileManager.read());
+        } catch (FileNotFoundException e) {
+            Logger.getLogger(FrmVolcano.class.getName()).log(Level.SEVERE, null, e);
         }
     }//GEN-LAST:event_btnShowDataActionPerformed
 
@@ -268,20 +274,21 @@ public class FrmVolcano extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btmSave;
     private javax.swing.JToggleButton btnShowData;
-    private javax.swing.JComboBox<String> cmbIsActive;
-    private javax.swing.JComboBox<String> cmbRegion;
-    private javax.swing.JComboBox<String> cmbTypeOfVolcano;
+    private javax.swing.JComboBox<String> cmbOrbiType;
+    private javax.swing.JComboBox<String> cmbTypeofSatellites;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableVolcano;
-    private javax.swing.JTextField txtAltitude;
+    private javax.swing.JTextField txtCreationDate;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtWeight;
     // End of variables declaration//GEN-END:variables
 }

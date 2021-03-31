@@ -11,10 +11,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.Vector;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,8 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Luje Catherine
  */
 public class FileManager {
-
-    public static boolean createFile(String fileName) {
+       public static boolean createFile(String fileName) {
         boolean created = false;
         try {
             File file = new File(fileName + ".csv");
@@ -56,11 +53,9 @@ public class FileManager {
             saved = false;
         }
         return saved;
-
-    }
-
-    public DefaultTableModel read() throws FileNotFoundException {
-           Vector satellites = new Vector();
+}
+  public DefaultTableModel read() throws FileNotFoundException {
+        Vector satellites = new Vector();
         satellites.addElement("Name");
         satellites.addElement("Creation Date");
         satellites.addElement("Weight");

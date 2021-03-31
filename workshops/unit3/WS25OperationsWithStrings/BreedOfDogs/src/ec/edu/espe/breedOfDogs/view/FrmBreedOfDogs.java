@@ -155,7 +155,7 @@ public class FrmBreedOfDogs extends javax.swing.JFrame {
         
     
         dogsName=txtDogsName.getText();
-        
+        dogsAge=Integer.getInteger(txtDogsAge.getText());
         weight=Float.parseFloat(txtWeight.getText());
         breedOfDogs=cmbBreedOfDogs.getSelectedItem().toString();
         

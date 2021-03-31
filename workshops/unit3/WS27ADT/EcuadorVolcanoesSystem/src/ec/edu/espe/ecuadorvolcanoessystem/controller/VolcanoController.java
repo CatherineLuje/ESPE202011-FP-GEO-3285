@@ -6,6 +6,9 @@
 package ec.edu.espe.ecuadorvolcanoessystem.controller;
 
 import ec.edu.espe.ecuadorvolcanoessystem.model.Volcano;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import utils.FileManager;
 
 /**
@@ -14,9 +17,10 @@ import utils.FileManager;
  */
 public class VolcanoController {
 
-    public void save(Volcano volcano){
+       public void save(Volcano volcano){
        String data = volcano.getName() + "," + volcano.getRegion() + "," + volcano.getAtitude() + "," + volcano.isIsActive() + "," + volcano.getTypeOfVolcano();
        FileManager.save(data, "Volcanoes");
       
     }
+     
 }

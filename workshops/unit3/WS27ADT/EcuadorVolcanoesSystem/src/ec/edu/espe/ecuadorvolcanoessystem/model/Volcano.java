@@ -23,7 +23,10 @@ public class Volcano {
         this.isActive = isActive;
         this.typeOfVolcano = typeOfVolcano;
     }
-    
+
+    public Volcano(String name, String creationDate, float weight, String typeofStellite, String orbitType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
     /**
