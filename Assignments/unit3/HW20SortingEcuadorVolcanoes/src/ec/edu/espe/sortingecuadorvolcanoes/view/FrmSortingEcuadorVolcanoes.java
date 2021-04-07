@@ -246,15 +246,15 @@ public class FrmSortingEcuadorVolcanoes extends javax.swing.JFrame {
         String searchVolcanoes;
         int dataToFind;
         Searcher searcher = new Searcher();
-        
+
         searchVolcanoes = txtVolcanoToSearch.getText();
         readEcuadorVolcanoes(volcanoes);
         dataToFind = searcher.findVolcanoes(volcanoes, searchVolcanoes);
-        
-        if(dataToFind==-1){
-            JOptionPane.showMessageDialog(null, searchVolcanoes+ " is NOT found", "Searching ", JOptionPane.ERROR_MESSAGE);
-        }  else{
-            JOptionPane.showMessageDialog(null, searchVolcanoes+ " is  found");
+
+        if (dataToFind == -1) {
+            JOptionPane.showMessageDialog(null, searchVolcanoes + " is NOT found", "Searching ", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, searchVolcanoes + " is  found");
         }
 
 

@@ -209,10 +209,11 @@ public class FrmSatellite extends javax.swing.JFrame {
         weight = Float.parseFloat(txtWeight.getText());
         typeofStellite = cmbTypeOfSatellite.getSelectedItem().toString();
         orbitType = cmbOrbitType.getSelectedItem().toString();
+        SatelliteController satelliteController=new SatelliteController();
         satellite = new Satellite(name, creationDate, weight, typeofStellite, orbitType);
-        SatelliteController.save(satellite);
+        satelliteController.save(satellite);
         JOptionPane.showMessageDialog(rootPane, satellite.getName());
-        DefaultTableModel table = null;
+        DefaultTableModel table=null ;
 
         satellites.addElement("Name");
         satellites.addElement("Creation Date");

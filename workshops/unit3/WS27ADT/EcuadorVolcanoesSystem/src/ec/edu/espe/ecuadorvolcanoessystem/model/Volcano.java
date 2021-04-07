@@ -11,21 +11,18 @@ package ec.edu.espe.ecuadorvolcanoessystem.model;
  */
 public class Volcano {
     private String name;
-    private String region;
-    private float atitude;
+    private boolean region;
+    private float altitude;
     private boolean isActive;
     private String typeOfVolcano;
 
-    public Volcano(String name, String region, float atitude, boolean isActive, String typeOfVolcano) {
+    public Volcano(String name,boolean region, float atitude, boolean isActive, String typeOfVolcano) {
         this.name = name;
         this.region = region;
-        this.atitude = atitude;
+        this.altitude = atitude;
         this.isActive = isActive;
         this.typeOfVolcano = typeOfVolcano;
-    }
-
-    public Volcano(String name, String creationDate, float weight, String typeofStellite, String orbitType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
     
 
@@ -46,29 +43,29 @@ public class Volcano {
     /**
      * @return the region
      */
-    public String getRegion() {
+    public boolean getRegion() {
         return region;
     }
 
     /**
      * @param region the region to set
      */
-    public void setRegion(String region) {
+    public void setRegion(boolean region) {
         this.region = region;
     }
 
     /**
-     * @return the atitude
+     * @return the altitude
      */
-    public float getAtitude() {
-        return atitude;
+    public float getAltitude() {
+        return altitude;
     }
 
     /**
-     * @param atitude the atitude to set
+     * @param altitude the altitude to set
      */
-    public void setAtitude(float atitude) {
-        this.atitude = atitude;
+    public void setAltitude(float altitude) {
+        this.altitude = altitude;
     }
 
     /**
